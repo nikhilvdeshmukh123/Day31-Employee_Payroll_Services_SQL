@@ -75,3 +75,29 @@ mysql> select * from employee_payroll_service where start BETWEEN CAST('2005-02-
 |  3 | Sankalp | 425000 | 2015-07-11 |
 +----+---------+--------+------------+
 2 rows in set (0.04 sec)
+
+mysql> alter table employee_payroll_service add gender CHAR(1) after name;
+Query OK, 0 rows affected (0.98 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update employee_payroll_service set gender = 'M' where name = 'Nikhil';
+Query OK, 1 row affected (0.20 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll_service set gender = 'M' where name = 'Sankalp';
+Query OK, 1 row affected (0.19 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll_service set gender = 'M' where name = 'Pranav';
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_payroll_service;
++----+---------+--------+--------+------------+
+| ID | Name    | gender | Salary | Start      |
++----+---------+--------+--------+------------+
+|  1 | Nikhil  | M      | 400000 | 2004-09-04 |
+|  2 | Pranav  | M      | 200000 | 2012-02-11 |
+|  3 | Sankalp | M      | 425000 | 2015-07-11 |
++----+---------+--------+--------+------------+
+3 rows in set (0.00 sec)
