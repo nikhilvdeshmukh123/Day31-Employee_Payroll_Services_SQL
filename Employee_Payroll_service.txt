@@ -30,3 +30,17 @@ mysql> show databases;
 
 mysql> USE Employee_payroll_service;
 Database changed
+
+mysql> create table employee_payroll_service(ID int not null auto_increment, Name varchar(30) not null, Salary double not null, Start Date not null, primary key(id));
+Query OK, 0 rows affected (2.79 sec)
+
+mysql> desc employee_payroll_service;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| ID     | int         | NO   | PRI | NULL    | auto_increment |
+| Name   | varchar(30) | NO   |     | NULL    |                |
+| Salary | double      | NO   |     | NULL    |                |
+| Start  | date        | NO   |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+4 rows in set (0.50 sec)
