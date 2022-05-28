@@ -101,3 +101,59 @@ mysql> select * from employee_payroll_service;
 |  3 | Sankalp | M      | 425000 | 2015-07-11 |
 +----+---------+--------+--------+------------+
 3 rows in set (0.00 sec)
+
+mysql> select AVG(salary) from employee_payroll_service where gender = 'M' group by gender;
++-------------------+
+| AVG(salary)       |
++-------------------+
+| 341666.6666666667 |
++-------------------+
+1 row in set (0.07 sec)
+
+mysql> select gender,AVG(salary) from employee_payroll_service group by gender;
++--------+-------------------+
+| gender | AVG(salary)       |
++--------+-------------------+
+| M      | 341666.6666666667 |
++--------+-------------------+
+1 row in set (0.10 sec)
+
+mysql> select AVG(salary) from employee_payroll_service;
++-------------------+
+| AVG(salary)       |
++-------------------+
+| 341666.6666666667 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select gender,SUM(salary) from employee_payroll_service group by gender;
++--------+-------------+
+| gender | SUM(salary) |
++--------+-------------+
+| M      |     1025000 |
++--------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select gender,MIN(salary) from employee_payroll_service group by gender;
++--------+-------------+
+| gender | MIN(salary) |
++--------+-------------+
+| M      |      200000 |
++--------+-------------+
+1 row in set (0.03 sec)
+
+mysql> select gender,MAX(salary) from employee_payroll_service group by gender;
++--------+-------------+
+| gender | MAX(salary) |
++--------+-------------+
+| M      |      425000 |
++--------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(Salary) as COUNT_OF_SALARY from employee_payroll_service;
++-----------------+
+| COUNT_OF_SALARY |
++-----------------+
+|               3 |
++-----------------+
+1 row in set (0.01 sec)
