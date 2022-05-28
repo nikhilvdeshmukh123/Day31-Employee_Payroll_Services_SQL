@@ -48,3 +48,13 @@ mysql> desc employee_payroll_service;
 mysql> insert into employee_payroll_service(Name, Salary,Start) values ('Nikhil', 400000.00, '2004-09-04'), ('Pranav', 200000.00, '2012-02-11'),('Sankalp', 425000.00, '2015-07-11');
 Query OK, 3 rows affected (0.33 sec)
 Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee_payroll_service;
++----+---------+--------+------------+
+| ID | Name    | Salary | Start      |
++----+---------+--------+------------+
+|  1 | Nikhil  | 400000 | 2004-09-04 |
+|  2 | Pranav  | 200000 | 2012-02-11 |
+|  3 | Sankalp | 425000 | 2015-07-11 |
++----+---------+--------+------------+
+3 rows in set (0.01 sec)
