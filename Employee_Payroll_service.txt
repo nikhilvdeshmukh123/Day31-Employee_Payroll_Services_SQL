@@ -58,3 +58,20 @@ mysql> select * from employee_payroll_service;
 |  3 | Sankalp | 425000 | 2015-07-11 |
 +----+---------+--------+------------+
 3 rows in set (0.01 sec)
+
+mysql> select salary from employee_payroll_service where name = 'Nikhil';
++--------+
+| salary |
++--------+
+| 400000 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee_payroll_service where start BETWEEN CAST('2005-02-11' AS DATE) AND DATE(NOW());
++----+---------+--------+------------+
+| ID | Name    | Salary | Start      |
++----+---------+--------+------------+
+|  2 | Pranav  | 200000 | 2012-02-11 |
+|  3 | Sankalp | 425000 | 2015-07-11 |
++----+---------+--------+------------+
+2 rows in set (0.04 sec)
